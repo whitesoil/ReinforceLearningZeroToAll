@@ -27,6 +27,13 @@ for i in range(num_episodes):
         # Random Noise 
         action = np.argmax(Q[state,:] + np.random.randn(1,env.action_space.n)/(i+1))
 
+        """
+            Action에 따른 결과값 반환
+            
+            new_state : 다음 위치
+            reward : 보상
+            done : 게임이 끝났는지 여부            
+	    """
         new_state, reward, done, _ = env.step(action)
         
         # Non-deterministic and Discounted reward Q-learning, update table
