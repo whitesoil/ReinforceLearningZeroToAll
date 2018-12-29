@@ -13,7 +13,7 @@ Q = np.zeros([env.observation_space.n,env.action_space.n])
 # Hyperparamters
 learning_rate = .85 # 학습률
 dis = .99 # Discount factor
-num_episodes = 2000
+num_episodes = 2000 # 반복 횟수
 
 # 성공 여부들을 저장(몇번 성공했는지 체크하기 위함)
 rList = []
