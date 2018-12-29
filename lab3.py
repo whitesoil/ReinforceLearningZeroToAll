@@ -53,7 +53,7 @@ for i in range(num_episodes):
         # Q 테이블 업데이트
         Q[state, action] = reward + np.max(Q[new_state,:])
 
-        # rAll이 1이 되면 성공
+        # rAll이 0보다 크면 성공
         rAll += reward
 
         state = new_state
@@ -66,6 +66,6 @@ print("Final Q-Table Values")
 print("LEFT DOWN RIGHT UP")
 print(Q)
 
-# 학습 결과 그래프 출력
+# 학습 결과를 그래프로 출력
 plt.bar(range(len(rList)),rList, color="blue")
 plt.show()
